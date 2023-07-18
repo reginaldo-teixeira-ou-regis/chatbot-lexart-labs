@@ -1,0 +1,49 @@
+'use client';
+import { twMerge } from "tailwind-merge";
+import Form from "./Form";
+import { useState } from "react";
+import Link from "next/link";
+import Options from "@/components/Options";
+
+export default function Interaction() {
+  const [messages, setMessages] = useState<MessageTypes.MessageProps[]>([])
+  const [isLoading, setIsLoading] = useState(false)
+
+  return (
+    <main className="bg-white w-full flex flex-col items-center">
+      <div className="bg-slate-500 md:w-1/3 shadow-lg rounded-lg min-h-screen flex flex-col items-center justify-between">
+        <section id="chatContainer" className="w-full h-full max-h-[calc(100vh-3.5rem)] overflow-y-auto p-3">
+          {messages.map((message, index) => (
+            <div key={index} className={twMerge('bg-slate-600 flex flex-col rounded-md p-3 justify-start gap-2 w-full mb-3', message.sentBy === 'system' && 'bg-slate-700')}>
+              <p className="text-white break-words" dangerouslySetInnerHTML={{ __html: message.message}}/>
+              {
+                message.options && (
+                  <div className="flex flex-col gap-2 items-start">
+                    {message.options.map((option) => (
+                      <Options option={option} key={option.content} />
+                    ))}
+                  </div>
+                )
+              }
+              <span className="text-xs text-gray-400">
+                {`${new Date(message.datetime).getHours()}:${new Date(message.datetime).getMinutes()}`}
+              </span>
+            </div>
+          ))}
+          {isLoading && (
+            <div className="bg-slate-700 flex flex-col rounded-md p-3 justify-start gap-2 w-full mb-3" >
+            <p className="text-white break-words">Typing...</p>
+          </div>
+          )}
+        </section>
+        <Form
+          setMessages={
+            (message: MessageTypes.MessageProps) => setMessages((prevMessages) => ([...prevMessages, message]))
+          }
+          setIsLoading={setIsLoading}
+          messages={messages}
+        />
+      </div>
+    </main>
+  )
+}

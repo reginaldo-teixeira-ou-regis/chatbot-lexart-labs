@@ -9,17 +9,29 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.0.0",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
+    "bcrypt": "^5.1.0",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
+    "json2csv": "^6.0.0-alpha.2",
+    "jsonwebtoken": "^9.0.1",
     "next": "13.4.9",
     "postcss": "8.4.25",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "swr": "^2.2.0",
+    "tailwind-merge": "^1.13.2",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/json2csv": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.2",
+    "prisma": "^5.0.0"
   }
 }
