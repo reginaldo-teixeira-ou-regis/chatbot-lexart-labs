@@ -58,3 +58,22 @@ npm run dev
 ```
 
 5 - Open your browser and go to http://localhost:3000 to view/use the chatbot.
+
+<table>
+  <tr>
+    <td>
+      <img src="public/File_1.svg" alt="Descrição opcional 1">
+    </td>
+    <td>
+      <img src="public/File_2.svg" alt="Descrição opcional 2">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="public/File_3.svg" alt="Descrição opcional 3">
+    </td>
+    <td>
+      <img src="public/File_4.svg" alt="Descrição opcional 4">
+    </td>
+  </tr>
+</table>
