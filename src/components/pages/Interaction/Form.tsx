@@ -9,7 +9,7 @@ export default function Form({ setMessages, setIsLoading, messages }: {
   setIsLoading(isLoading: boolean): void,
   messages: MessageTypes.MessageProps[]
 }) {
-  const [message, setMessage] = useState('Hello')
+  const [message, setMessage] = useState('')
   const [required, setRequired] = useState<'username' | 'password' | undefined>()
   const handleMessage = useHandleMessages()
   
