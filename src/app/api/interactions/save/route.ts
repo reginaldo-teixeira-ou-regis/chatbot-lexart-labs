@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
         sentBy: 'system',
       });
     }
-    const conv = await prisma.$transaction([prisma.historyConversation.create({
+    await prisma.$transaction([prisma.historyConversation.create({
       data: {
         user: {
           connect: {
