@@ -28,7 +28,9 @@ export async function POST(req: NextRequest) {
       }
     })])
     return NextResponse.json({
-      message: "Saved conversation!",
+      message: `Saved conversation! <br /> <br />
+      Download the conversation by clicking 
+      <a href="export-conversation" target="_blank">DOWNLOAD!</a>`,
       sentBy: 'system',
     })
   } catch (error) {

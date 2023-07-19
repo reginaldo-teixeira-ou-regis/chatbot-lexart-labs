@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
     options: [
       {
         label: 'Do you want to apply for a loan?',
-        href: 'https://nubank.com.br/en/loans/',
+        href: `https://nubank.com.br/en/loans/`,
         hrefLabel: 'Click here and learn about Nubank Personal Loan!',
         content: `Nubank Personal Loan!
         First installment in up to 90 days and up to 24 months to pay, anticipation of installments with a discount, change of payment date, monitoring of installments via the Nubank app and autonomous renegotiation.`,
