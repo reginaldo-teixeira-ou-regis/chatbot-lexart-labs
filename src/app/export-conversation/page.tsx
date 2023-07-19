@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from "react";
 import { parse } from 'json2csv'
-const API_URL = process.env.NEXT_PUBLIC_API_URL
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
 
 export default function ExportConversation() {
   const [data, setData] = useState<ConversationTypes.ConversationProps[]>([])
@@ -29,8 +29,8 @@ export default function ExportConversation() {
   }
 
   return (
-    <div className="bg-slate-600 h-screen text-white">
-      <h1>Export Conversation</h1>
+    <div className="bg-slate-500 h-screen text-white">
+      <h1 className="flex flex-row justify-center text-2xl bg-slate-700 p-2">To export the conversation click Download</h1>
       <ul>
         {data.map((item, index) => (
           <li key={item.id} id={item.id} className="flex gap-3 bg-slate-900 p-3 rounded-md justify-center items-center mb-3 mx-3">
