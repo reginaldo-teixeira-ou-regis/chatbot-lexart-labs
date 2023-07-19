@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-// import { sign, verify } from 'jsonwebtoken';
 import { SignJWT as sign, jwtVerify as verify, JWTVerifyResult } from 'jose'
-import { ReadonlyRequestCookies } from "next/dist/server/web/spec-extension/adapters/request-cookies";
 import { RequestCookies } from "next/dist/compiled/@edge-runtime/cookies";
 
 async function checkToken(handleCookie: RequestCookies, userToken: string) {

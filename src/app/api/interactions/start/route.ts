@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 import bcrypt from 'bcrypt';
-import { sign, verify } from 'jsonwebtoken';
+import { sign } from 'jsonwebtoken';
 import { cookies } from 'next/dist/client/components/headers';
 import { ReadonlyRequestCookies } from 'next/dist/server/web/spec-extension/adapters/request-cookies';
 import { jwtVerify } from 'jose';
@@ -62,7 +62,7 @@ async function createUser(username: any, password: string | Buffer, handleCookie
 }
 
 export async function POST(req: NextRequest) {
-  const { message, username, password } = await req.json() as MessageTypes.MessageProps;
+  const { username, password } = await req.json() as MessageTypes.MessageProps;
   const handleCookie = cookies();
   try {
     const userExists = await prisma.user.findUnique({
