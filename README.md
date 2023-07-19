@@ -63,7 +63,7 @@ npm run dev
 
 <img src="public/Chatbot_2.png" alt="Chatbot_2">
 
-<img src="public/Chatbot_3.png" alt="Chatbot_30">
+<img src="public/Chatbot_30.png" alt="Chatbot_3">
 
 <img src="public/Download_Screen.png" alt="Download_Screen">
  
