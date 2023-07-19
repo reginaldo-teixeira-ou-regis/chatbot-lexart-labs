@@ -23,8 +23,8 @@ The Chatbot offers the following functionalities:
 	* ###### `GOODBYE`: Saves the conversation in the database.
 	* ###### `LOAN`: It offers 3 clickable options that open just below the clicked option, with relevant information about and a link just below each option, if the link is clicked it takes the user to a page outside the chatbot with relevant information about the subject referring to the information.
 	* ###### `LOGOUT`: Logs the user out of their account.
-	
-	- To download the chatbot conversation, access http://localhost:3000/export-conversation and click the Download button.
+
+- To download the chatbot conversation, access http://localhost:3000/export-conversation and click the Download button.
 
 ## Pre-requisites
 
