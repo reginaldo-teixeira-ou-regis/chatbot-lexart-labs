@@ -1,4 +1,4 @@
-# Chatbot - Loan Information
+# Full Stack ChatBot Project
 
 The chatbot is a computer program designed to interact with humans through a chat interface. It utilizes artificial intelligence to understand and respond to user messages in an automated manner.
 
