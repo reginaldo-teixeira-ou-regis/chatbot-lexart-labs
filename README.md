@@ -59,9 +59,7 @@ npm run dev
 
 5 - Open your browser and go to http://localhost:3000 to view/use the chatbot.
 
-<img src="public/Chatbot_1.png" alt="Chatbot_1">
-
-<img src="public/Chatbot_2.png" alt="Chatbot_2">
+<img src="public/Chatbot_2.png" alt="Chatbot_1">
 
 <img src="public/Chatbot_30.png" alt="Chatbot_3">
 
