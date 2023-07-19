@@ -6,6 +6,7 @@ export default async function sendMessage(
   route: string,
   require?: 'username' | 'password'
 ): Promise<MessageTypes.SystemMessageProps | void> {
+  console.log('URLLLLLLLLLLLLLL', API_URL)
   if (require === 'username' && !Array.isArray(message)) {
     sessionStorage.setItem('username', message.message);
     const response = await fetch(`${API_URL}/api/interactions/${route}`, {
