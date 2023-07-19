@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
   try {
     const { user } = verify(token, process.env.JWT_SECRET || 'secret') as UserTypes.UserToken
     
-    if (!user || !user.id) {
+    if (!user?.id) {
       return NextResponse.json({
         message: "Hello, I'm your virtual assistant, to continue the conversation enter your username.",
         require: 'username',
