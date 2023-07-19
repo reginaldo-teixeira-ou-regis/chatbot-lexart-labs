@@ -30,7 +30,7 @@ export default function ExportConversation() {
 
   return (
     <div className="bg-slate-500 h-screen text-white">
-      <h1 className="flex gap-3 flex-row justify-center text-2xl bg-slate-700 p-3 rounded-lg items-center mb-3 mx-3">To export the conversation click Download!</h1>
+      <h1 className="flex gap-3 flex-row justify-center text-2xl bg-slate-700 p-3 rounded-lg items-center mt-3 mb-3 mx-3">To export the conversation click Download!</h1>
       <ul>
         {data.map((item, index) => (
           <li key={item.id} id={item.id} className="flex gap-3 bg-slate-900 p-3 rounded-md justify-center items-center mb-3 mx-3">
