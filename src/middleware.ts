@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { SignJWT as sign, jwtVerify as verify, JWTVerifyResult } from 'jose'
+import { jwtVerify as verify } from 'jose'
 import { RequestCookies } from "next/dist/compiled/@edge-runtime/cookies";
 
 async function checkToken(handleCookie: RequestCookies, userToken: string) {
@@ -24,7 +24,7 @@ async function checkToken(handleCookie: RequestCookies, userToken: string) {
 
 export async function middleware(req: NextRequest) {
   const body = await req.json() as MessageTypes.MessageProps;
-  const { message, username, password } = body;
+  const { message, username } = body;
   if (!message && !Array.isArray(body)) {
     return NextResponse.json({ error: 'Missing message!', message: 'Error interno!' }, { status: 400 });
   }
