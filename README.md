@@ -20,7 +20,7 @@ The Chatbot offers the following functionalities:
 	* ###### `HELLO`: If the user is not registered or logged in, it prompts for their username and password dynamically to register or log into their account. If the user is already logged in, it simply greets them and suggests some interaction options.
 	* ###### `I WANT`: It is willing to help the user and suggests an interaction to continue the conversation.
 	* ###### `GOOD`: The chatbot thanks the user and asks if it can help with anything else, suggesting additional interaction possibilities.
-	* ###### `GOODBYE`: Saves the conversation in the database.
+	* ###### `GOODBYE`: Saves the conversation in the database and makes the conversation available for download in the same confirmation notice that the conversation was saved in the chatbot.
 	* ###### `LOAN`: It offers 3 clickable options that open just below the clicked option, with relevant information about and a link just below each option, if the link is clicked it takes the user to a page outside the chatbot with relevant information about the subject referring to the information.
 	* ###### `LOGOUT`: Logs the user out of their account.
 
