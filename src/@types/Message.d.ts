@@ -7,6 +7,7 @@ declare namespace MessageTypes {
     href: string;
     hrefLabel: string;
     content: string;
+    target?: string;
   }
 
   interface MessageProps {

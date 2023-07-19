@@ -4,29 +4,7 @@ import bcrypt from 'bcrypt';
 import { sign, verify } from 'jsonwebtoken';
 import { cookies } from 'next/dist/client/components/headers';
 import { ReadonlyRequestCookies } from 'next/dist/server/web/spec-extension/adapters/request-cookies';
-
-async function checkToken(handleCookie: ReadonlyRequestCookies, userToken: string) {
-  try {
-    const decodedToken = verify(userToken, process.env.JWT_SECRET || 'secret') as UserTypes.UserToken;
-    if (decodedToken) {
-      return NextResponse.json({
-        message: `Hello ${decodedToken.user.username}!<br/>
-        I'm your virtual assistant, I can help with general queries related to loans. Type 'loan' to find out more! <br/> <br/>
-        Type 'logout' at any time to disconnect from your account.`,
-        sentBy: 'system',
-      });
-    }
-  } catch (error) {
-    handleCookie.set('token', '', {
-      maxAge: 0,
-    });
-    return NextResponse.json({
-      message: "Your session has expired, please enter your username.",
-      require: 'username',
-      sentBy: 'system',
-    });
-  }
-}
+import { jwtVerify } from 'jose';
 
 async function loginUser(user: UserTypes.UserProps, incomingPassword: string, handleCookie: ReadonlyRequestCookies) {
   const { username, password } = user
@@ -86,44 +64,42 @@ async function createUser(username: any, password: string | Buffer, handleCookie
 export async function POST(req: NextRequest) {
   const { message, username, password } = await req.json() as MessageTypes.MessageProps;
   const handleCookie = cookies();
-  if (!message) {
-    return NextResponse.json({ error: 'Missing message!' }, { status: 400 });
-  }
-
-  const userToken = handleCookie.get('token')?.value;
-
-  if (userToken) {
-    return checkToken(handleCookie, userToken);
-  }
-
-  if (!username) {
-    return NextResponse.json({
-      message: "Hello, I'm your virtual assistant, to continue the conversation enter your username.",
-      require: 'username',
-      sentBy: 'system',
+  try {
+    const userExists = await prisma.user.findUnique({
+      where: { username: username },
+      select: {
+        id: true,
+        username: true,
+        password: true,
+      },
     });
+  
+    if (!password) {
+      return NextResponse.json({
+        message: `Your username has already been identified ${userExists ? 'in our database' : ''}, now enter your password.`,
+        require: 'password',
+        sentBy: 'system', 
+      });
+    }
+  
+    if (userExists && password) {
+      return loginUser(userExists, password, handleCookie);
+    }
+  
+    return createUser(username, password, handleCookie);
+  } catch (error) {
+    const token = handleCookie.get('token')
+
+    if (token) {
+      const { payload: userToken } = (await jwtVerify(token.value, new TextEncoder().encode(process.env.JWT_SECRET || 'secret')) as unknown) as { payload: UserTypes.UserToken };
+      return NextResponse.json({
+        token,
+        message: `Hello ${userToken.user.username}! <br/>
+        I'm your virtual assistant, I can help with general queries related to loans. Type loan to find out more! <br/> <br/>
+        Type logout at any time to disconnect from your account.`,
+        sentBy: 'system',
+        Headers: req.headers,
+      });
+    }
   }
-
-  const userExists = await prisma.user.findUnique({
-    where: { username },
-    select: {
-      id: true,
-      username: true,
-      password: true,
-    },
-  });
-
-  if (!password) {
-    return NextResponse.json({
-      message: `Your username has already been identified ${userExists ? 'in our database' : ''}, now enter your password.`,
-      require: 'password',
-      sentBy: 'system', 
-    });
-  }
-
-  if (userExists && password) {
-    return loginUser(userExists, password, handleCookie);
-  }
-
-  return createUser(username, password, handleCookie);
 }

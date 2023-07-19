@@ -62,7 +62,7 @@ export default function Form({ setMessages, setIsLoading, messages }: {
       <button
         className="bg-slate-700 h-full hover:bg-slate-950 transition-colors duration-200 active:bg-slate-300 text-white rounded px-2 pb-1 items-center"
         type="submit"
-        disabled={messages.at(-1)?.sentBy === 'user'}
+        // disabled={messages.at(-1)?.sentBy === 'user'}
       >send</button>
     </form>
   )
