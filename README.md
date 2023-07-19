@@ -1,58 +1,59 @@
 # Chatbot - Loan Information
 
-Chatbot é um programa de computador projetado para interagir com seres humanos por meio de uma interface de chat. Ele utiliza inteligência artificial para entender e responder às mensagens dos usuários de forma automatizada.
+The chatbot is a computer program designed to interact with humans through a chat interface. It utilizes artificial intelligence to understand and respond to user messages in an automated manner.
 
-## Recursos
+## Resources
 
-- TypeScript: Estende o JavaScript, adicionando tipagem estática, permite a detecção de erros em tempo de compilação, melhorando a robustez e a manutenibilidade do código. 
-- Next.js: Um framework React que oferece recursos avançados, como roteamento automático, carregamento otimizado de páginas, pré-renderização, suporte a API e muito mais.
-- Prisma ORM: Uma ferramenta de banco de dados que ajuda a reduzir a complexidade do acesso ao banco de dados e aumenta a produtividade do desenvolvedor.
-- Tailwind CSS: Um framework de design de interface de usuário (UI) que facilita a criação de interfaces estilizadas de forma eficiente.
-- Tailwind-Merge: Mescla com eficiência as classes Tailwind CSS em JS sem conflitos de estilo.
-- Json Web Token: Usado para autenticar solicitações em aplicativos web e APIs, permitindo uma autenticação stateless e o compartilhamento seguro de dados.
+- TypeScript: Extends JavaScript by adding static typing, enables error detection at compile-time, improving code robustness and maintainability.
+- Next.js: A React framework that offers advanced features such as automatic routing, optimized page loading, pre-rendering, API support, and more.
+- Prisma ORM: A database tool that helps reduce the complexity of database access and increases developer productivity.
+- Tailwind CSS: A user interface (UI) design framework that makes it easy to create stylized interfaces efficiently.
+- Tailwind-Merge: Efficiently merges Tailwind CSS classes in JS without style conflicts.
+- Json Web Token: Used to authenticate requests in web applications and APIs, allowing stateless authentication and secure data sharing.
 
-## Funcionalidades
+## Functionality
 
-O Chatbot oferece as seguintes funcionalidades:
+The Chatbot offers the following functionalities:
 
-- Atraves da interação com o chatbot de forma dinamica o usuario pode se cadastrar, logar, deslogar e saber mais informações sobre emprestimos.
-- Digitando no chatboot:
-	* ###### `HELLO`: Se o usuario não for cadastrado ou não estiver logado é solicitado seu username e password de forma dinamica para que seja cadastrado ou para apenas logar em sua conta. Caso o usuario já esteja logado apenas é mostrado uma saudação e algumas sugestões de interação.
-	* ###### `I WANT`: Se dispoe a ajudar o usuario e sugere uma interação para continuar a conversação.
-	* ###### `GOOD`: O chatbot agradece e pergunta se pode ajudar o usuario em algo mais e até sugere algumas possibilidades a mais de interações.
-	* ###### `GOODBYE`: Salva a conversa no banco de dados.
-	* ###### `LOAN`: Oferece 3 opções clicaveis que abre logo abaixo da opção clicada, uma informação relevante sobre e um link logo abaixo que se clicado leva o usuario a uma pagina com informações relevantes sobre.
-	* ###### `LOGOUT`: Desconecta o usuario de sua conta.
+- Through dynamic interaction with the chatbot, users can register, log in, log out, and obtain more information about loans.
+- Typing in the chatbot:
+	* ###### `HELLO`: If the user is not registered or logged in, it prompts for their username and password dynamically to register or log into their account. If the user is already logged in, it simply greets them and suggests some interaction options.
+	* ###### `I WANT`: It is willing to help the user and suggests an interaction to continue the conversation.
+	* ###### `GOOD`: The chatbot thanks the user and asks if it can help with anything else, suggesting additional interaction possibilities.
+	* ###### `GOODBYE`: Saves the conversation in the database.
+	* ###### `LOAN`: It offers 3 clickable options that open just below the clicked option, with relevant information about and a link just below each option, if the link is clicked it takes the user to a page outside the chatbot with relevant information about the subject referring to the information.
+	* ###### `LOGOUT`: Logs the user out of their account.
+	- To download the chatbot conversation, access http://localhost:3000/export-conversation and click the Download button.
 
-## Pré Requisitos
+## Pre-requisites
 
-Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
+Make sure you have the following tools installed on your machine:
 
 - Node.js
-- npm (ou yarn)
+- npm (or yarn)
 
-## Instalação
+## Installation
 
-Siga as etapas abaixo para configurar o projeto em sua máquina:
+Follow the steps below to set up the project on your machine:
 
-1 - Clone este repositório:
+1 - Clone this repository:
 ```bash
 git clone //https://github.com/reginaldo-teixeira-ou-regis/chatbot-lexart-labs
 ```
 
-2 - Acesse o diretório do projeto:
+2 - Access the project directory:
 ```bash
 cd chatbot-lexart-labs
 ```
 
-3 - Instale as dependências:
+3 - Install the dependencies:
 ```bash
 npm install
 ```
 
-4 - Inicie o servidor de desenvolvimento:
+4 - Start the development server:
 ```bash
 npm run dev
 ```
 
-5 - Abra o navegador e acesse http://localhost:3000 para visualizar/utilizar o chatbot.
+5 - Open your browser and go to http://localhost:3000 to view/use the chatbot.
