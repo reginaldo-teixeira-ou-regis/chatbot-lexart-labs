@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState, FormEvent } from "react";
 import { parse } from 'json2csv'
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000'
+const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 export default function ExportConversation() {
   const [data, setData] = useState<ConversationTypes.ConversationProps[]>([])
