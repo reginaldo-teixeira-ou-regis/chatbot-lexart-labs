@@ -8,7 +8,7 @@ interface InteractionProps {
 }
 
 export async function POST(req: NextRequest) {
-  const { message, userId } = await req.json() as InteractionProps;
+  const { message } = await req.json() as InteractionProps;
   if (!message) {
     return NextResponse.json({ error: "Missing message or user id" }, { status: 400 })
   }
