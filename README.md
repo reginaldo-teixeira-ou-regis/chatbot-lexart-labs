@@ -62,18 +62,18 @@ npm run dev
 <table>
   <tr>
     <td>
-      <img src="public/File_1.svg" alt="Descrição opcional 1">
+      <img src="public/Chatbot_1.png" alt="Descrição opcional 1">
     </td>
     <td>
-      <img src="public/File_2.svg" alt="Descrição opcional 2">
+      <img src="public/Chatbot_2.png" alt="Descrição opcional 2">
     </td>
   </tr>
   <tr>
     <td>
-      <img src="public/File_3.svg" alt="Descrição opcional 3">
+      <img src="public/Chatbot_3.png" alt="Descrição opcional 3">
     </td>
     <td>
-      <img src="public/File_4.svg" alt="Descrição opcional 4">
+      <img src="public/Download_Screen.png" alt="Descrição opcional 4">
     </td>
   </tr>
 </table>
