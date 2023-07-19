@@ -9,7 +9,6 @@ async function checkToken(handleCookie: ReadonlyRequestCookies, userToken: strin
   try {
     const decodedToken = verify(userToken, process.env.JWT_SECRET || 'secret') as UserTypes.UserToken;
     if (decodedToken) {
-      console.log(decodedToken);
       return NextResponse.json({
         message: `Hello ${decodedToken.user.username}!<br/>
         I'm your virtual assistant, I can help with general queries related to loans. Type 'loan' to find out more! <br/> <br/>
@@ -54,7 +53,6 @@ async function loginUser(user: UserTypes.UserProps, incomingPassword: string, ha
 async function createUser(username: any, password: string | Buffer, handleCookie: ReadonlyRequestCookies) {
   try {
     const hashedPassword = await bcrypt.hash(password, 10);
-    console.log(username);
     
     const user = await prisma.user.create({
       data: {

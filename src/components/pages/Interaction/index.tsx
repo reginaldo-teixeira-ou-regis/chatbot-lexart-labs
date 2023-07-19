@@ -2,7 +2,6 @@
 import { twMerge } from "tailwind-merge";
 import Form from "./Form";
 import { useState } from "react";
-import Link from "next/link";
 import Options from "@/components/Options";
 
 export default function Interaction() {

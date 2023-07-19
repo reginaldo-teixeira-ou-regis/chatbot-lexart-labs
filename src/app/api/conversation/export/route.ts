@@ -7,7 +7,6 @@ export async function GET() {
   const handleCookie = cookies()
 
   const token = handleCookie.get("token")?.value
-  console.log(token);
   
   if (!token) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

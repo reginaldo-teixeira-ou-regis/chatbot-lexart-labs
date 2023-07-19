@@ -9,7 +9,6 @@ export async function POST(req: NextRequest) {
   const token = handleCookies.get("token")?.value || ''
   try {
     const { user } = verify(token, process.env.JWT_SECRET || 'secret') as UserTypes.UserToken
-    console.log(user);
     
     if (!user || !user.id) {
       return NextResponse.json({

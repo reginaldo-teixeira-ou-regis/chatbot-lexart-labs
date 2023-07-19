@@ -27,7 +27,6 @@ export default function Form({ setMessages, setIsLoading, messages }: {
     setMessage('')
 
     let route = handleMessage(message);
-    console.log(route);
     if (required) {
       route = 'start'
     }
