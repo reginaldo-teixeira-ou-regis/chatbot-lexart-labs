@@ -1,6 +1,6 @@
 # Chatbot - Loan Information
 
-Chatbot é um programa de computador projetado para interagir com seres humanos por meio de uma interface de chat. Ele utiliza técnicas de processamento de linguagem natural (NLP) e inteligência artificial para entender e responder às mensagens dos usuários de forma automatizada.
+Chatbot é um programa de computador projetado para interagir com seres humanos por meio de uma interface de chat. Ele utiliza inteligência artificial para entender e responder às mensagens dos usuários de forma automatizada.
 
 ## Recursos
 
@@ -19,10 +19,10 @@ O Chatbot oferece as seguintes funcionalidades:
 - Digitando no chatboot:
 	* ###### `HELLO`: Se o usuario não for cadastrado ou não estiver logado é solicitado seu username e password de forma dinamica para que seja cadastrado ou para apenas logar em sua conta. Caso o usuario já esteja logado apenas é mostrado uma saudação e algumas sugestões de interação.
 	* ###### `I WANT`: Se dispoe a ajudar o usuario e sugere uma interação para continuar a conversação.
-	###### `GOOD`: O chatbot agradece e pergunta se pode ajudar o usuario em algo mais e até sugere algumas possibilidades a mais de interações.
-	###### `GOODBYE`: Salva a conversa no banco de dados.
-	###### `LOAN`: Oferece 3 opções clicaveis que abre logo abaixo da opção clicada, uma informação relevante sobre e um link logo abaixo que se clicado leva o usuario a uma pagina com informações relevantes sobre.
-	###### `LOGOUT`: Desconecta o usuario de sua conta.
+	* ###### `GOOD`: O chatbot agradece e pergunta se pode ajudar o usuario em algo mais e até sugere algumas possibilidades a mais de interações.
+	* ###### `GOODBYE`: Salva a conversa no banco de dados.
+	* ###### `LOAN`: Oferece 3 opções clicaveis que abre logo abaixo da opção clicada, uma informação relevante sobre e um link logo abaixo que se clicado leva o usuario a uma pagina com informações relevantes sobre.
+	* ###### `LOGOUT`: Desconecta o usuario de sua conta.
 
 ## Pré Requisitos
 
